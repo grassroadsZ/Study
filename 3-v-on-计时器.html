@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-on计数器</title>
+</head>
+<body>
+    <div id="app">
+            <div>当前数据</div>
+            <h2>{{num}}</h2>
+            <!-- 将点击事件与+号进行绑定 -->
+            <button v-on:click='add'> + </button>
+            <!-- 使用语法糖糖进行简写 @click=’sub‘等价于 v-on:click='sub' -->
+            <!-- 双击事件：v-on:dblclick="方法"    @dblclick="方法"(简写) -->
+
+            <button @click='sub'> - </button>
+    
+            <!-- <button v-on:click='sub'> — </button> -->
+
+</div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+    let app = new Vue({
+        el: "#app",
+        
+        data: { num:0 },
+        methods:{
+            add() {
+                this.num ++
+            },
+
+            sub () {
+                this.num --
+            }
+        }
+
+    })
+
+</script>
+</html>
