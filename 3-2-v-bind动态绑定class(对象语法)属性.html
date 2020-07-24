@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue的v-bind</title>
+    <style>
+        .active {
+            color:red;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        
+        <!-- <p :class="active_class">{{message}}</p> -->
+        <!-- <h2 v-bind:class="{类名1:true, 类名2:false}">{{message}}</h2> -->
+        <h2 v-bind:class="{active:isActive, line:isLine}">{{message}}</h2>
+        <button v-on:click='btnclick'> 点按钮文字变色 </button>
+    </div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+        let app = new Vue({
+        el: "#app",
+
+        data: {
+            message: "你好",
+            active_class: 'active',
+            isActive: true,
+            isLine:true
+        },
+        methods:{
+            btnclick() {
+                this.isActive = !this.isActive
+            }
+        }
+
+
+    })
+
+</script>
+
+</html>

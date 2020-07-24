@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>v-for指令</title>
+    <title>vue的vue-once</title>
 </head>
+
 <body>
     <div id="app">
-            <div>{{ message }}</div>
-        <ul>
-            <li v-for ="item in movies">{{item}}</li>
-        </ul>
-</div>
+       <h2> {{message}} </h2>
+       <h3 v-once> {{message}}</h3>
+
+
+
+    </div>
 
 </body>
 
@@ -20,9 +23,13 @@
 <script>
     let app = new Vue({
         el: "#app",
-        
-        data: {message: "你好",movies:["a","b","c"]}
-    })
 
+        data: {
+            message: "你好",
+        },
+
+
+    })
 </script>
+
 </html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue插值操作:Mustache(胡须)</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 这里不仅可以写变量也可以写简单的表达式 -->
+        <div>{{message}}</div>
+        <h2>{{num}}</h2>
+        <h2> + </h2>
+        <h2>{{second_num}}</h2>
+        <h2> = </h2>
+        <!-- 此处加号时好像有问题 -->
+        <h2>{{num +  '+' + second_num + "=" + second_num * num}}</h2>
+
+
+
+    </div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+    let app = new Vue({
+        el: "#app",
+
+        data: {
+            num: 0,
+            message: "你好",
+            second_num: 5
+        },
+
+
+    })
+</script>
+
+</html>

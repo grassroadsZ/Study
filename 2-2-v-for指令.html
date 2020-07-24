@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-for指令</title>
+</head>
+<body>
+    <div id="app">
+            <div>{{ message }}</div>
+        <ul>
+            <li v-for ="item in movies">{{item}}</li>
+        </ul>
+</div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+    // 实例化对象app：{},所有的操作都基于这个app
+    // let 与const区别一个是定义变量一个是定义常量
+    let app = new Vue({
+        // 绑定app元素
+        el: "#app",
+        // 数据
+        data: {message: "你好",movies:["a","b","c"]}
+    })
+
+</script>
+</html>

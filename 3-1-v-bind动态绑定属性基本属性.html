@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue的v-bind</title>
+
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <!-- 这是错误的用法  -->
+        <!-- <img src="{{imgURL}}" alt=""> -->
+
+        <!-- 这是正确的 -->
+        <img v-bind:src="imgURL" alt="">
+        <!-- 复杂写法 -->
+        <a v-bind:href="aHref">谷歌一下</a>
+        <!-- 语法糖写法 -->
+        <a :href="aHref">语法糖一下</a>
+
+
+    </div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+        let app = new Vue({
+        el: "#app",
+
+        data: {
+            message: "你好",
+            imgURL: 'https://cn.vuejs.org/images/logo.png',
+            aHref: 'http://www.baidu.com'
+        }
+
+
+    })
+
+</script>
+
+</html>
